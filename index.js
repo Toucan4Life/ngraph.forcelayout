@@ -305,7 +305,7 @@ function createLayout(graph, physicsSettings) {
     updateBodyMass(link.fromId);
     updateBodyMass(link.toId);
 
-    var linkLength = link.data.weight===undefined?link.length: 4/link.data.weight;
+    var linkLength = link.data.weight===undefined?link.length: 2/link.data.weight;
 
     var fromBody = nodeBodies.get(link.fromId),
         toBody  = nodeBodies.get(link.toId),

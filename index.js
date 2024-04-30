@@ -304,10 +304,12 @@ function createLayout(graph, physicsSettings) {
   function initLink(link) {
     updateBodyMass(link.fromId);
     updateBodyMass(link.toId);
+    
+    var linkLength = link.data.weight===undefined?link.length: link.data.weight;
 
     var fromBody = nodeBodies.get(link.fromId),
         toBody  = nodeBodies.get(link.toId),
-        spring = physicsSimulator.addSpring(fromBody, toBody, link.length);
+        spring = physicsSimulator.addSpring(fromBody, toBody, linkLength);
 
     springTransform(link, spring);
 
